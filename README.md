@@ -26,19 +26,16 @@
 
 ## 环境准备
 
-1、删除已有虚拟环境（如果有）：
-   ```bash
-   rm -rf venv/
 
-2、创建新的虚拟环境：
+1、创建新的虚拟环境：
 
     python3 -m venv venv
 
-3、激活虚拟环境：
+2、激活虚拟环境：
 
    source venv/bin/activate
 
-4、安装依赖：
+3、安装依赖：
 
    pip install -r requirements.txt
 
@@ -47,6 +44,8 @@
 pip install flask openai python-dotenv flask-sqlalchemy flask-apscheduler
 
 pip freeze > requirements.txt
+
+---
 
 ## 配置环境变量
 
@@ -58,10 +57,13 @@ OPENAI_API_KEY=你的OpenAI_API_Key
 
 请根据你自己的 OpenAI API 地址和密钥进行替换。
 
+---
+
 ## 启动项目
 
 通过 IDE 运行 app.py 文件，或命令行执行：python3 app.py
 
+---
 
 ## 使用说明
 
@@ -72,6 +74,8 @@ http://127.0.0.1:5000/
 ### 访问后台评论管理页面（查看待审核评论，手动审核）：
 
 http://127.0.0.1:5000/admin
+
+---
 
 ## 备注
 
