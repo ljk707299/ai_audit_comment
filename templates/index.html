@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comments Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>评论列表</h1>
+        <form method="POST">
+            <textarea name="content" placeholder="请在这里写评论..." required></textarea>
+            <input type="submit" value="提交评论">
+        </form>
+        <div class="comments-list">
+            {% for comment in comments %}
+            <div class="comment">
+                <p>{{ comment.content }}</p>
+
+                <span>发布时间： {{ comment.created_at|timesince }}</span>
+
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

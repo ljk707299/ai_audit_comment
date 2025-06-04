@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>待审核评论列表</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>待审核评论列表</h1>
+        <div class="comments-list">
+            {% for comment in comments %}
+            <div class="comment">
+                <span>ID： {{ comment.id }}</span>
+                <p>{{ comment.content }}</p>
+                 <span>发布时间： {{ comment.created_at|timesince }}</span>
+                <a class="pass" href="{{ url_for('passone', id=comment.id) }}">通过</a>
+                <a class="reject" href="{{ url_for('rejectone', id=comment.id) }}">拒绝</a>
+            </div>
+            {% endfor %}
+           {% if not comments %}
+            <p>暂无评论</p>
+           {% endif %}
+        </div>
+    </div>
+</body>
+</html>
